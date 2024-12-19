@@ -1,0 +1,62 @@
+@media screen and (max-width: 1019px) {
+    .Header {
+        padding: 10px 20px;
+    }
+}
+
+@media screen and (min-width: 945px) {
+    .Header .HeaderMob {
+        display: none !important;
+    }
+}
+
+@media screen and (max-width: 945px) {
+    .Header .HeaderDesk .Link {
+        display: none;
+    }
+
+    .Header .HeaderDesk .IconMenuMobile {
+        display: flex;
+    }
+
+    .Header .HeaderMob.show {
+        transform: translateY(-10px) translateX(-5px);
+    }
+
+}
+
+@media screen and (max-width: 554px) {
+    .Header .HeaderDesk .Btn {
+        max-width: 85px;
+    }
+
+    .Header .HeaderDesk .Btn a {
+        display: none;
+    }
+
+    .Header .HeaderMob .Btn {
+        display: flex;
+    }
+}
+
+@media screen and (max-width: 359px) {
+    .Header .HeaderDesk .LogoLink .Logo figure img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .Header .HeaderDesk .LogoLink .Logo p {
+        display: none;
+    }
+
+    .Header .HeaderMob {
+        max-width: 250px;
+        padding: 20px;
+    }
+}
+
+@media screen and (max-width: 322px) {
+    .Header .HeaderMob {
+        right: 10px;
+    }
+}
