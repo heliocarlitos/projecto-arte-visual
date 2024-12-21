@@ -2,6 +2,10 @@
     .Header {
         padding: 10px 20px;
     }
+
+    .HeroSection {
+        padding: 0 20px;
+    }
 }
 
 @media screen and (min-width: 945px) {
@@ -36,6 +40,31 @@
 
     .Header .HeaderMob .Btn {
         display: flex;
+    }
+
+    .HeroSection .Icones .Icon1 {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .HeroSection .Conteudo .Titulo p {
+        font-size: 1.7em;
+    }
+}
+
+@media screen and (max-width: 390px) {
+    .HeroSection .Conteudo .Btn {
+        margin-top: 0;
+    }
+
+    .HeroSection .Conteudo .Texto {
+        font-size: 1em;
+    }
+
+    .HeroSection .Conteudo .Ferramentas {
+        justify-content: center;
+        flex-wrap: wrap;
     }
 }
 
