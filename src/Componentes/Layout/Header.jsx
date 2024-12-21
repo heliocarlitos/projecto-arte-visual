@@ -27,8 +27,27 @@ function Header() {
         setDarkMode(!darkMode);
     };
 
+        // FUNDO SCROLL NO HEADER (AOENA ISSO A CLASSE E O CSS)
+        const [transparente, setTransparente] = useState(false);
+        useEffect(() => {
+            const handleScroll = () => {
+                if (window.scrollY > 50) {
+                    setTransparente(true);
+                } else {
+                    setTransparente(false);
+                }
+            };
+    
+            window.addEventListener('scroll', handleScroll);
+    
+            return () => {
+                window.removeEventListener('scroll', handleScroll);
+            };
+        }, []);
+        // 
+
     return (
-        <header className="Header">
+        <header className={`Header ${transparente ? 'transparente' : ''}`}>
 
             <div className="HeaderDesk">
 
