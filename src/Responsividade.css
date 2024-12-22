@@ -1,9 +1,39 @@
+@media screen and (max-width: 1261px) {
+    .SecaoDeServicos .OsServicos img {
+        width: 445px;
+    }
+}
+
+@media screen and (max-width: 1201px) {
+    .SecaoDeServicos .OsServicos img {
+        width: 100%;
+        max-width: 745px;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 1046px) {
+    .SecaoDeServicos .OsServicos {
+        flex-wrap: wrap;
+    }
+
+    .SecaoDeServicos .OsServicos .Bloco {
+        grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    }
+
+    .SecaoDeServicos .OsServicos .Imagem {
+        justify-content: center;
+        margin-top: 20px;
+    }
+}
+
 @media screen and (max-width: 1019px) {
     .Header {
         padding: 10px 20px;
     }
 
-    .HeroSection {
+    .HeroSection,
+    .SecaoDeServicos {
         padding: 0 20px;
     }
 }
@@ -53,6 +83,23 @@
     }
 }
 
+@media screen and (max-width: 420px) {
+    .HeroIntro .Titulo p {
+        font-size: 1.8em;
+    }
+
+    .SecaoDeServicos .OsServicos {
+        flex-wrap: wrap-reverse;
+    }
+
+    .SecaoDeServicos .OsServicos .Bloco .CardServico .Icon {
+        width: 50px;
+        height: 50px;
+        border-radius: 10px;
+        font-size: 1.8em;
+    }
+}
+
 @media screen and (max-width: 390px) {
     .HeroSection .Conteudo .Btn {
         margin-top: 0;
@@ -81,6 +128,10 @@
     .Header .HeaderMob {
         max-width: 250px;
         padding: 20px;
+    }
+
+    .SecaoDeServicos .OsServicos .Bloco {
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     }
 }
 
