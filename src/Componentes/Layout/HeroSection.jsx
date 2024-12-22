@@ -11,11 +11,11 @@ function HeroSection() {
                 <div className="Icones">
 
                     <div className="Icon1">
-                        <figure><img src="https://crypto-tailwind.preview.uideck.com/src/images/shapes/hero-shape-1.svg" alt="svg" loading="lay" fetchpriority="high" /></figure>
+                        <figure><img src="https://crypto-tailwind.preview.uideck.com/src/images/shapes/hero-shape-1.svg" alt="svg" loading="lay" fetchpriority="high" width="500" height="500" /></figure>
                     </div>
 
                     <div className="Icon2">
-                        <figure><img src="https://crypto-tailwind.preview.uideck.com/src/images/shapes/hero-shape-2.svg" alt="svg" /></figure>
+                        <figure><img src="https://crypto-tailwind.preview.uideck.com/src/images/shapes/hero-shape-2.svg" loading="lay" fetchpriority="high" alt="svg" width="500" height="500"  /></figure>
                     </div>
 
                 </div>
