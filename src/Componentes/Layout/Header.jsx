@@ -1,49 +1,170 @@
-<!doctype html>
-<html lang="pt-br">
+import React, { useState, useEffect } from "react";
+import logo_do_site from "../../imagens/logos/favicon.webp";
+import { FaAngleDown } from "react-icons/fa6";
+import { IoMoonOutline, IoSunnyOutline } from "react-icons/io5";
 
-<head>
-  <!-- Configurações Básicas -->
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <link rel="icon" type="image/webp" href="src/imagens/logos/favicon.webp" />
+function Header() {
+    const [menuAberto, setMenuAberto] = useState(false);
+    const [darkMode, setDarkMode] = useState(() => {
+        const temaSalvo = localStorage.getItem("theme");
+        return temaSalvo === "dark";
+    });
 
-  <!-- SEO -->
-  <title>Arte Visual</title>
-  <meta name="description" content="Agência de mídias sociais" />
-  <meta name="keywords"
-    content="design, designer, criacao de conteusos, redes sociais, savio, unicosavio, unico, savio morais, gestao de midias sociais, huta, hutadev, hutauta, hutauta dev, huta developer, helio, helio carlitos, helio carlitos antonio" />
-  <meta name="author" content="Hutauta Developer" />
-  <meta name="robots" content="index, follow" />
+    useEffect(() => {
+        if (darkMode) {
+            document.documentElement.classList.add("dark");
+        } else {
+            document.documentElement.classList.remove("dark");
+        }
+        localStorage.setItem("theme", darkMode ? "dark" : "light");
+    }, [darkMode]);
 
-  <!-- Open Graph (Para Redes Sociais) -->
-  <meta property="og:title" content="Arte Visual" />
-  <meta property="og:description" content="Agência de mídias sociais" />
-  <meta property="og:image" content="src/imagens/gerais/demo.webp" />
-  <meta property="og:url" content="https://artevisual.vercel.app" />
-  <meta property="og:type" content="website" />
+    const toggleMenu = () => {
+        setMenuAberto(!menuAberto);
+    };
 
-  <!-- Twitter Cards -->
-  <meta name="twitter:card" content="src/imagens/gerais/demo.webp" />
-  <meta name="twitter:title" content="Arte Visual" />
-  <meta name="twitter:description" content="Agência de mídias sociais" />
-  <meta name="twitter:image" content="src/imagens/gerais/demo.webp" />
+    const toggleTheme = () => {
+        setDarkMode(!darkMode);
+    };
 
-  <!-- Links Importantes -->
-  <link rel="canonical" href="https://www.hutadev.com/" />
-  <link rel="manifest" href="/manifest.json" />
-  <link rel="stylesheet" href="src/styles/global.css" />
+        // FUNDO SCROLL NO HEADER (AOENA ISSO A CLASSE E O CSS)
+        const [transparente, setTransparente] = useState(false);
+        useEffect(() => {
+            const handleScroll = () => {
+                if (window.scrollY > 50) {
+                    setTransparente(true);
+                } else {
+                    setTransparente(false);
+                }
+            };
+    
+            window.addEventListener('scroll', handleScroll);
+    
+            return () => {
+                window.removeEventListener('scroll', handleScroll);
+            };
+        }, []);
+        // 
 
-  <!-- Performance e Acessibilidade -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-</head>
+    return (
+        <header className={`Header ${transparente ? 'transparente' : ''}`}>
 
-<body>
-  <div id="root"></div>
-  <script type="module" src="/src/main.jsx" defer></script>
-</body>
+            <div className="HeaderDesk">
 
-</html>
+                <div className="LogoLink">
+
+                    <div className="Logo">
+                        <a href="/" aria-label="Ir para página inicial">
+                            <figure>
+                                <img src={logo_do_site} alt="Logo do Site" loading="lazy" />
+                                <figcaption>
+                                    <p>Arte Visual</p>
+                                </figcaption>
+                            </figure>
+                        </a>
+                    </div>
+
+                    <nav className="Link">
+                        <ul>
+                            <li> <a href="#Home" aria-label="Ir para página inicial">Home</a> </li>
+                            <li> <a href="#Sobre" aria-label="Ir para página sobre">Sobre</a> </li>
+                            <li> <a href="#Servicos" aria-label="Ir para página de serviços">Serviços</a> </li>
+                            <li> <a href="#Preco" aria-label="Ir para página de preços">Preço</a> </li>
+                            <li> <a href="#Portfólio" aria-label="Ir para página de Portfólio">Portfólio</a> </li>
+                            <li> <a href="#Contacto" aria-label="Ir para página de contacto">Contacto</a> </li>
+                            {/* <li className="VerSubMenuDesk">
+                                <a href="#" aria-label="Ver todas páginas">
+                                    Páginas
+                                    <div className="Icon">
+                                        <FaAngleDown />
+                                    </div>
+                                </a>
+                                <div className="SubMenuDesk">
+                                    <ul>
+                                        <li> <a href="#" aria-label="Ir para página de sobre"> Página de sobre </a> </li>
+                                        <li> <a href="#" aria-label="Ir para página de contacto"> Página de contacto </a> </li>
+                                        <li> <a href="#" aria-label="Ir para página de grades do blog"> Página de grades do blog </a> </li>
+                                        <li> <a href="#" aria-label="Ir para página de barra lateral do blog"> Página de barra lateral do blog </a> </li>
+                                        <li> <a href="#" aria-label="Ir para página de detalhes do blog"> Página de detalhes do blog </a> </li>
+                                        <li> <a href="#" aria-label="Ir para página de login"> Página de login </a> </li>
+                                        <li> <a href="#" aria-label="Ir para página de inscição"> Página de inscição </a> </li>
+                                        <li> <a href="#" aria-label="Ir para página de erro 404"> Página de erro 404 </a> </li>
+                                    </ul>
+                                </div>
+                            </li> */}
+                        </ul>
+
+                    </nav>
+
+                    <div className="Btn">
+                        <a href="#" aria-label="Solicitar serviço">Solicitar serviço</a>
+
+                        <button aria-label="Mudar tema" onClick={toggleTheme}>
+                            {darkMode ? <IoSunnyOutline /> : <IoMoonOutline />}
+                        </button>
+
+                        <button
+                            className={`IconMenuMobile ${menuAberto ? "active" : ""}`}
+                            onClick={toggleMenu}
+                            aria-label="Abrir ou fechar menu"
+                        >
+                            <span></span>
+                            <span className="DoMeio"></span>
+                            <span></span>
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div className={`HeaderMob ${menuAberto ? "show" : ""}`} id="HeaderMob">
+
+                <nav>
+
+                    <ul>
+
+                        <li> <a href="#Home" aria-label="Ir para página inicial">Home</a> </li>
+                        <li> <a href="#Sobre" aria-label="Ir para página sobre">Sobre</a> </li>
+                        <li> <a href="#Servicos" aria-label="Ir para página de serviços">Serviços</a> </li>
+                        <li> <a href="#Preco" aria-label="Ir para página de preços">Preço</a> </li>
+                        <li> <a href="#Portfólio" aria-label="Ir para página de Portfólio">Portfólio</a> </li>
+                        <li> <a href="#Contacto" aria-label="Ir para página de contacto">Contacto</a> </li>
+                        {/* 
+                        <details>
+
+                            <summary aria-label="Ver todas páginas">
+                                Páginas <div className="Icon"><FaAngleDown /> </div>
+                            </summary>
+
+                            <div className="SubMenuMob">
+                                <ul>
+                                    <li> <a href="#" aria-label="Ir para página de sobre"> Página de sobre </a> </li>
+                                    <li> <a href="#" aria-label="Ir para página de contacto"> Página de contacto </a> </li>
+                                    <li> <a href="#" aria-label="Ir para página de grades do blog"> Página de grades do blog </a> </li>
+                                    <li> <a href="#" aria-label="Ir para página de barra lateral do blog"> Página de barra lateral do blog </a> </li>
+                                    <li> <a href="#" aria-label="Ir para página de detalhes do blog"> Página de detalhes do blog </a> </li>
+                                    <li> <a href="#" aria-label="Ir para página de login"> Página de login </a> </li>
+                                    <li> <a href="#" aria-label="Ir para página de inscição"> Página de inscição </a> </li>
+                                    <li> <a href="#" aria-label="Ir para página de erro 404"> Página de erro 404 </a> </li>
+                                </ul>
+                            </div>
+
+                        </details> */}
+
+                    </ul>
+
+                    <div className="Btn">
+                        <a href="#" aria-label="Solicitar serviço">Solicitar serviço</a>
+                    </div>
+
+                </nav>
+
+            </div>
+
+        </header>
+    );
+}
+
+export default Header;
