@@ -595,6 +595,12 @@ main {
     display: flex;
     flex-direction: column;
     gap: 20px;
+
+    &:hover .Icon {
+        &::after {
+            transform: rotate(20deg);
+        }
+    }
 }
 
 .SecaoDeServicos .OsServicos .Bloco .CardServico .Icon {
@@ -607,6 +613,19 @@ main {
     border-radius: 10px;
     font-size: 2.5em;
     color: var(--cor-branca);
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        width: 70px;
+        height: 70px;
+        background-color: var(--cor-azul-transparent);
+        border-radius: 10px;
+        transform: rotate(45deg);
+        transition: .2s ease;
+        z-index: -1;
+    }
 }
 
 .SecaoDeServicos .OsServicos .Bloco .CardServico .Titulo p {
