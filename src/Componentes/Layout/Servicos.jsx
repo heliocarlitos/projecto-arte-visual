@@ -82,7 +82,7 @@ function Servicos() {
                     </div>
 
                     <div className="Imagem">
-                        <figure><img src={capa_1} alt="Imagem de capa" loading="lazy" /></figure>
+                        <figure><img src={capa_1} width="545" height="573" alt="Imagem de capa" loading="lazy" /></figure>
                     </div>
 
                 </div>
