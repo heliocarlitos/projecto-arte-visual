@@ -1,4 +1,11 @@
+
 # React + Vite
+
+<figure>
+
+![Imagem de demo](src/imagens/gerais/demo.webp)
+
+<figure>
 
 Para rodar esse projecto antes de tudo instale o Node JS, depois instale as dependencias seguindo estes passos:
 
