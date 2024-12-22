@@ -398,6 +398,7 @@ main {
 .HeroSection .Icones .Icon1 img,
 .HeroSection .Icones .Icon2 img {
     width: 100%;
+    height: auto;
 }
 
 .HeroSection .Conteudo {
@@ -643,5 +644,5 @@ main {
 
 .SecaoDeServicos .OsServicos img {
     width: 545px;
-    height: auto;
+    height: auto !important;
 }
