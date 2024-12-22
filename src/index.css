@@ -420,8 +420,6 @@ main {
 }
 
 .HeroSection .Conteudo .Texto {
-    font-size: 1.1em;
-    font-weight: 600;
     color: var(--cor-do-texto);
 }
 
