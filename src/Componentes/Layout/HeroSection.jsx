@@ -11,7 +11,7 @@ function HeroSection() {
                 <div className="Icones">
 
                     <div className="Icon1">
-                        <figure><img src="https://crypto-tailwind.preview.uideck.com/src/images/shapes/hero-shape-1.svg" alt="svg" /></figure>
+                        <figure><img src="https://crypto-tailwind.preview.uideck.com/src/images/shapes/hero-shape-1.svg" alt="svg" loading="lay" fetchpriority="high" /></figure>
                     </div>
 
                     <div className="Icon2">
@@ -27,7 +27,7 @@ function HeroSection() {
                     </div>
 
                     <div className="Texto">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas odio pariatur excepturi mollitia, perferendis quisquam, ab, ad ullam nihil consequatur doloremque facere magnam! Facilis ex natus fuga ut explicabo veniam?</p>
+                        <p fetchpriority="high" loading="lazy">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas odio pariatur excepturi mollitia, perferendis quisquam, ab, ad ullam nihil consequatur doloremque facere magnam! Facilis ex natus fuga ut explicabo veniam?</p>
                     </div>
 
                     <div className="Ferramentas">
