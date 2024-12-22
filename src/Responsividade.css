@@ -84,6 +84,13 @@
 }
 
 @media screen and (max-width: 420px) {
+
+    *,
+    html,
+    body {
+        user-select: none !important;
+    }
+
     .HeroIntro .Titulo p {
         font-size: 1.8em;
     }
