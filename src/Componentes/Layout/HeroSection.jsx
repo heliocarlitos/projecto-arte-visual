@@ -2,6 +2,8 @@ import { SiAdobephotoshop, SiWondersharefilmora } from "react-icons/si";
 import { IoLogoFigma } from "react-icons/io5";
 import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
 import { FaReact } from "react-icons/fa";
+import onda_1 from "../../imagens/svg/onda_1.svg"
+import onda_2 from "../../imagens/svg/onda_2.svg"
 
 function HeroSection() {
     return (
@@ -11,11 +13,11 @@ function HeroSection() {
                 <div className="Icones">
 
                     <div className="Icon1">
-                        <figure><img src="https://crypto-tailwind.preview.uideck.com/src/images/shapes/hero-shape-1.svg" alt="svg" loading="lay" fetchpriority="high" width="500" height="500" /></figure>
+                        <figure><img src={onda_1} alt="svg" loading="lay" fetchpriority="high" height="276" width="411" /></figure>
                     </div>
 
                     <div className="Icon2">
-                        <figure><img src="https://crypto-tailwind.preview.uideck.com/src/images/shapes/hero-shape-2.svg" loading="lay" fetchpriority="high" alt="svg" width="500" height="500"  /></figure>
+                        <figure><img src={onda_2} loading="lay" fetchpriority="high" alt="svg" width="820" height="692" /></figure>
                     </div>
 
                 </div>
