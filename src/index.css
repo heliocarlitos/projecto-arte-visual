@@ -20,8 +20,8 @@ html {
     --cor-border-header: #e6e3e3;
 
     --cor-do-link: #1D2144;
-    --cor-do-texto: #8b8b8b;
-    --cor-do-titulo: #090E34;
+    --cor-do-texto: #373737;
+    --cor-do-titulo: #000000;
 
     --fundo-do-site: #fff;
     --fundo-do-submenu: #ffff;
@@ -632,7 +632,7 @@ main {
     font-weight: 600;
 }
 
-.SecaoDeServicos .OsServicos .Bloco .CardServico {
+.SecaoDeServicos .OsServicos .Bloco .CardServico .Texto{
     color: var(--cor-do-texto);
 }
 
