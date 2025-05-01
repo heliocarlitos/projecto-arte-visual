@@ -1,5 +1,7 @@
 # React + Vite
 
+***PS:*** Muito em breve vou deixar o código da versão completa aqui.
+
 > [!IMPORTANT]
 > Esta é a última versão open source deste projecto, as versões posteriores são privadas, você pode acompanhar o progresso [aqui](https://artevisual.vercel.app/)
 
